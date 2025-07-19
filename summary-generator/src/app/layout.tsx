@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "利用規約を理解する",
+  title: "利用規約をわかりやすく",
   description: "利用規約を入力すると、AIによってイントごとに要約が生成されます。",
 };
 
