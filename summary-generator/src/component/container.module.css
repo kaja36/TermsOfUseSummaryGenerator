@@ -15,7 +15,8 @@
 }
 
 .read_more_1:has(:checked) div {
-    max-height: 100vh;
+    max-height: 70vh;
+    overflow: auto
 }
 
 .read_more_1 div::after {

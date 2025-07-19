@@ -45,7 +45,7 @@ async function gemini(input: string) {
             c. サービスまたは運営がユーザに求めること（ユーザから収集する情報も含めてください）
             d. ユーザがそのサービスを利用する上で禁止されている行為
             e. 利用規約の内容についてのQ&A（よくある質問）
-        - 以下の内容も利用規約から探し出すこと
+        - 以下の内容も利用規約から探し出すこと（無い場合はnullにしてください）
             - サービス名
             - 運営会社名
             - 利用規約の施行日（西暦）
@@ -54,9 +54,9 @@ async function gemini(input: string) {
         以下に出力例を示します
         {
             "isTermsOfUse": true,
-            "serviceName": "サービス名",
-            "companyName": "運営会社名",
-            "enforcedDate": "利用規約の施行日（西暦）", // 例: "2023年10月1日"
+            "serviceName": "サービス名", //無い場合はnull
+            "companyName": "運営会社名", //無い場合はnull
+            "enforcedDate": "利用規約の施行日（西暦）", // 例: "2023年10月1日", 無い場合はnull
             "description": [
                 "サービスの説明1",
                 "サービスの説明2",
@@ -112,12 +112,15 @@ async function gemini(input: string) {
               },
               serviceName: {
                 type: Type.STRING,
+                nullable: true, 
               },
               companyName: {
                 type: Type.STRING,
+                nullable: true, 
               },
               enforcedDate: {
                 type: Type.STRING,
+                nullable: true, 
               },
               description: {
                 type: Type.ARRAY,
@@ -168,7 +171,7 @@ async function gemini(input: string) {
         },
       },
     });
-    console.log(JSON.parse(response.text!));
+    // console.log(JSON.parse(response.text!));
     return JSON.parse(response.text!);
   } catch (error) {
     console.error("Error in gemini function:", error);
