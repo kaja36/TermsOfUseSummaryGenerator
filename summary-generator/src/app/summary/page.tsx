@@ -92,7 +92,7 @@ function Page() {
     <>
     <Link href={'/'} className="m-1 font-medium text-blue-600 dark:text-blue-500 hover:underline hover:text-orange-700">＜戻る</Link>
       <div className='my-20'>
-        <h1 className='text-5xl font-bold text-center my-8'>{serviceName} 利用規約</h1>
+        <h1 className='text-4xl sm:text-5xl font-bold text-center my-8'>{serviceName} 利用規約</h1>
         <p className='text-right my-4 mr-15'>{companyName}</p>
         <p className='text-right mb-12 mr-15'>{enforcedDate}</p>
         <hr className='border-gray-400 mx-6'></hr>

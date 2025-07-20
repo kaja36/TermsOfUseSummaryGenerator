@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <div className="m-4">
-      <h1 className="text-4xl py-1.5 font-bold">利用規約をわかりやすく</h1>
+      <h1 className="text-3xl sm:text-4xl py-1.5 font-bold">利用規約をわかりやすく</h1>
       <hr/>
       利用規約を入力すると、ポイントごとに要約が生成されます。<br/>
       <br/>
