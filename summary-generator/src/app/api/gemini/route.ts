@@ -1,6 +1,5 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
-import { track } from '@vercel/analytics/server';
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
@@ -9,7 +8,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
     const res = await request.json();
     const result = await gemini(res.input);
-    await track('fetch_gemini_api')
     return NextResponse.json(result);
   } catch (error) {
     console.error("Error in POST /api/gemini:", error);
